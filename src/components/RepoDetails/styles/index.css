@@ -1,0 +1,42 @@
+.repoDetails {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.ownerInfo {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0px 8px;
+}
+
+.imageContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	max-width: 34px;
+}
+
+.image {
+	width: 100%;
+}
+
+.titleContainer {
+	font-size: 22px;
+}
+
+.title {
+	padding: 10px;
+}
+
+.repoName {
+	font-size: 35px;
+	padding: 8px;
+	margin: 10px 0px;
+}
+
+.descr {
+	padding: 0px 8px;
+}
