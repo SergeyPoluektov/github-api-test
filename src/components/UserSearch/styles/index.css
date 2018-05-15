@@ -1,0 +1,21 @@
+.searchContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.title {
+	text-align: left;
+	margin: 0px 0px 8px 0px;
+	font-size: 18px;
+}
+
+.searchBtn {
+	font-size: 18px;
+	margin-left: 8px;
+}
+
+.searchInput {
+	font-size: 18px;
+	padding: 8px;
+}
