@@ -1,0 +1,25 @@
+.paginator {
+	width: 100%;
+}
+
+.pages {
+	display: flex;
+	justify-content: center;
+	padding: 8px 0px;
+}
+
+.pageNum {
+	padding: 4px;
+	margin-right: 4px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.pageNum:last-child {
+	margin-right: 0px;
+}
+.pageNumActive {
+	color: #6d6d6d;
+	text-decoration: none;
+	border: none;
+	background: #efefef;
+}
