@@ -19,4 +19,9 @@ module.exports = (env = {}, args) => ({
 			chunks: 'all',
 		},
 	},
+	plugins: [
+		new webpack.DefinePlugin({
+			'GITHUB_TOKEN': JSON.stringify(args.githubToken),
+		}),
+	],
 })
