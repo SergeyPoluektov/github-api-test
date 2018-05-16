@@ -1,8 +1,8 @@
 import {
 	SEARCH_USER,
 	SEARCH_USER_RESOLVE,
-	LOAD_USER_INFO,
 	LOAD_USER_INFO_RESOLVE,
+	LOAD_STARRED_REPOS,
 	LOAD_STARRED_REPOS_RESOLVE,
 } from 'store/state/types'
 
@@ -16,7 +16,7 @@ const paginationReducer = getPaginationReducer('login', {
 	fetchResolveActionType: SEARCH_USER_RESOLVE,
 })
 const starredReposReducer = getPaginationReducer('full_name', {
-	fetchActionType: LOAD_USER_INFO,
+	fetchActionType: LOAD_STARRED_REPOS,
 	fetchResolveActionType: LOAD_STARRED_REPOS_RESOLVE,
 })
 const usersListNormalizer = makeListNormalizer('login')
@@ -72,9 +72,31 @@ export default function reducer (state = initialState, action) {
 				}
 			}
 		}
+		case LOAD_STARRED_REPOS: {
+			const { sort, direction, userName } = action.payload
+			const user = state.entities[userName] || {}
+			const repos = user.starredRepos || {}
+			const isSameSorting = sort === repos.sort
+				&& direction === repos.direction
+			if (isSameSorting) return state
+			return {
+				...state,
+				entities: {
+					...state.entities,
+					[userName]: {
+						...user,
+						starredRepos: {
+							...starredReposReducer(undefined, action),
+							sort,
+							direction,
+						},
+					},
+				},
+			}
+		}
 		case LOAD_STARRED_REPOS_RESOLVE: {
 			if (action.isError) return state
-			const { userName } = action.payload
+			const { userName, sort, direction } = action.payload
 			const user = state.entities[userName] || {}
 			const starredReposState = user.starredRepos
 			return {

@@ -7,8 +7,8 @@ import { loadRepoInfoResolve, loadStarredReposResolve } from 'store/state/domain
 
 function* loadStarredReposWatcher ({ payload }) {
 	try {
-		const { userName, page } = payload
-		const response = yield call(getUserStarredRepos, userName, page)
+		const { userName, page, sort, direction } = payload
+		const response = yield call(getUserStarredRepos, userName, page, sort, direction)
 		const linkHeader = response.header['link']
 		const parsed = parseLinkHeader(linkHeader)
 		const hasLast = parsed && parsed.last
@@ -18,6 +18,8 @@ function* loadStarredReposWatcher ({ payload }) {
 			userName,
 			pagesCount,
 			page,
+			sort,
+			direction,
 		}))
 	}
 	catch (e) {

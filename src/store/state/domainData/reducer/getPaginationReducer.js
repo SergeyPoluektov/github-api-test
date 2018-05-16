@@ -27,15 +27,16 @@ const getReducer = (idKey, actionTypes) => {
 				if (action.isError) return { ...state, fetchStatus: 'FAILED' }
 				const { entities = [], pagesCount = state.pagesCount, page } = action.payload
 				const entityIds = entities.map((entity) => entity[idKey])
+				const pages = state.pages || {}
 				return {
 					...state,
 					fetchStatus: 'SUCCESS',
 					pagesCount,
 					currentPage: page,
 					pages: {
-						...state.pages,
+						...pages,
 						[page]: [
-							...(state.pages[page] || []),
+							...(pages[page] || []),
 							...entityIds,
 						]
 					},

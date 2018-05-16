@@ -6,12 +6,12 @@ import { loadUserInfoResolve, loadStarredRepos } from 'store/state/domainData/ac
 
 function* loadUserInfoWatcher ({ payload }) {
 	try {
-		const { userName, page } = payload
+		const { userName, page, sort, direction } = payload
 		const response = yield call(getUser, userName)
 		const userInfo = response.body
 		yield put(loadUserInfoResolve(userInfo))
 
-		yield put(loadStarredRepos(userName, page))
+		yield put(loadStarredRepos({ userName, page, sort, direction }))
 	}
 	catch (e) {
 		console.log('Cannt get user data', e)

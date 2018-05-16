@@ -14,8 +14,15 @@ export const getRepoDetailsHref = (fullRepoName) => {
 		.replace(':orgName', orgName)
 		.replace(':repoName', repoName)
 }
-export const getUserDetailsHref = (userName, page = 1, base = 1) => {
-	const queryString = page === base ? '' : `?${qs.stringify({ page })}`
+export const getUserDetailsHref = (userName, ...queryArgs) => {
+	const [
+		page = 1,
+		base = 1,
+		sort = 'created',
+		direction = 'desc',
+	] = queryArgs
+	const isDefaultQueryArgs = page === base && sort === 'created' && direction === 'desc'
+	const queryString = isDefaultQueryArgs ? '' : `?${qs.stringify({ page, sort, direction })}`
 	return `${PATHS.USER_DETAILS.replace(':userName', userName)}${queryString}`
 }
 export const getUsersSearchHref = (term, pageNum, base = 1) => {

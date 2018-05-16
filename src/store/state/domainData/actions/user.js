@@ -6,11 +6,13 @@ import {
 } from 'store/state/types'
 
 
-export const loadUserInfo = (userName, page) => ({
+export const loadUserInfo = (userName, page, sort, direction) => ({
 	type: LOAD_USER_INFO,
 	payload: {
 		userName,
 		page,
+		sort,
+		direction,
 	}
 })
 export const loadUserInfoResolve = (userData, isError = false) => ({

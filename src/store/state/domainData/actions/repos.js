@@ -6,12 +6,9 @@ import {
 } from 'store/state/types'
 
 
-export const loadStarredRepos = (userName, page) => ({
+export const loadStarredRepos = (payload) => ({
 	type: LOAD_STARRED_REPOS,
-	payload: {
-		userName,
-		page,
-	},
+	payload,
 })
 export const loadStarredReposResolve = (payload, isError = false) => ({
 	type: LOAD_STARRED_REPOS_RESOLVE,

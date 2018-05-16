@@ -37,3 +37,39 @@
 	font-size: 18px;
 	font-weight: 700;
 }
+
+.noReposTxt {
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+.sort {
+	padding-left: 20px;
+}
+
+.sortTitle {
+	text-transform: uppercase;
+}
+
+.sortLinkList {
+	max-width: 310px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sortLink {
+	margin-right: 8px;
+	margin-top: 8px;
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.sortLink:last-child {
+	margin-right: 0px;
+}
+.activeSortLink {
+	color: #6d6d6d;
+	text-decoration: none;
+	border: none;
+	background: #efefef;
+}

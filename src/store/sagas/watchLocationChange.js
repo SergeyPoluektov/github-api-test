@@ -25,28 +25,35 @@ function* usersPageWorker ({ q: term, page = '1' }) {
 	else yield put(searchUser(term, page))
 }
 
-const hasUserStarredRepos = ({ starredRepos = {} }, page) => {
-	const { pages = {} } = starredRepos
+const hasUserStarredRepos = ({ starredRepos = {} }, page, newSort, newDir) => {
+	const { pages = {}, sort, direction } = starredRepos
 	const userStarredReposList = pages[page] || []
 	return userStarredReposList.length > 0
+		&& sort === newSort
+		&& direction === newDir
 }
 
-function* userDetailsWorker ({ userName }, { page = '1' }) {
+function* userDetailsWorker ({ userName }, query) {
+	const {
+		page = '1',
+		sort = 'created',
+		direction = 'desc',
+	} = query
 	const users = yield select(getUsers)
 	const user = users[userName] || {}
 	// don't load user info if already have location in state
 	if (user.location) {
-		const hasRepos = yield call(hasUserStarredRepos, user, page)
+		const hasRepos = yield call(hasUserStarredRepos, user, page, sort, direction)
 		if (hasRepos) {
-			yield put(loadStarredReposResolve({ userName, page }))
+			yield put(loadStarredReposResolve({ userName, page, sort, direction }))
 		}
 		else {
-			yield put(loadStarredRepos(userName, page))
+			yield put(loadStarredRepos({ userName, page, sort, direction }))
 		}
 		return
 	}
 
-	yield put(loadUserInfo(userName, page))
+	yield put(loadUserInfo(userName, page, sort, direction))
 }
 
 function* repoDetailsWorker ({ orgName, repoName }) {
