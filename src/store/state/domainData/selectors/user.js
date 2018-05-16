@@ -1,4 +1,5 @@
 import { flow } from 'lodash'
+import { createSelector } from 'reselect'
 import {
 	getDomainData,
 	makeEntitiesSelector,
@@ -13,12 +14,17 @@ const getUsersState = flow(
 	getDomainData,
 	({ users }) => users,
 )
-const getUsersPaginationState = flow(
+const userPaginationState = createSelector(
 	getUsersState,
-	({ pagination }) => pagination
+	(_, term) => term,
+	({ pagination }, term) => (pagination[term] || {})
 )
 export const getUsers = makeEntitiesSelector(getUsersState)
-export const getFetchUsersStatus = makeFetchStatusSelector(getUsersPaginationState)
-export const getPagesCount = makePagesCountSelector(getUsersPaginationState)
-export const getCurrentPage = makeCurrentPageSelector(getUsersPaginationState)
-export const getPages = makePagesSelector(getUsersPaginationState)
+export const getFetchUsersStatus = makeFetchStatusSelector(userPaginationState)
+export const getPagesCount = makePagesCountSelector(userPaginationState)
+export const getCurrentPage = makeCurrentPageSelector(userPaginationState)
+export const getPages = makePagesSelector(userPaginationState)
+export const byCurrentTerm = (selector) => (state) => {
+	const { currentTerm } = getUsersState(state)
+	return selector(state, currentTerm)
+}

@@ -23,72 +23,71 @@ const usersListNormalizer = makeListNormalizer('login')
 
 const initialState = {
 	entities: {},
-	pagination: paginationReducer(undefined, {}),
+	pagination: {},
+	currentTerm: '',
 }
 
 export default function reducer (state = initialState, action) {
-	let nextState = state
 	switch (action.type) {
+		case SEARCH_USER: {
+			const { term } = action.payload
+			return {
+				...state,
+				pagination: {
+					...state.pagination,
+					[term]: paginationReducer(state.pagination[term], action),
+				},
+				currentTerm: term,
+			}
+		}
 		case SEARCH_USER_RESOLVE: {
-			if (action.isError) {
-				nextState = state
+			if (action.isError) return state
+			const { entities = [], term } = action.payload
+			const newEntities = entities.reduce(usersListNormalizer(state.entities), {})
+			return {
+				...state,
+				entities: {
+					...state.entities,
+					...newEntities,
+				},
+				pagination: {
+					...state.pagination,
+					[term]: paginationReducer(state.pagination[term], action)
+				},
+				currentTerm: term,
 			}
-			else {
-				const { entities } = action.payload
-				const newEntities = entities.reduce(usersListNormalizer(state.entities), {})
-				nextState = {
-					...state,
-					entities: {
-						...state.entities,
-						...newEntities,
-					}
-				}
-			}
-			break
 		}
 		case LOAD_USER_INFO_RESOLVE: {
-			if (action.isError) nextState = state
-			else {
-				const { payload: newUserData } = action
-				const userData = state.entities[newUserData.login] || {}
-				nextState = {
-					...state,
-					entities: {
-						...state.entities,
-						[newUserData.login]: {
-							...userData,
-							...newUserData,
-						},
-					}
-				}
-			}
-			break
-		}
-		case LOAD_STARRED_REPOS_RESOLVE: {
-			if (action.isError) nextState = state
-			else {
-				const { userName } = action.payload
-				const user = state.entities[userName] || {}
-				const starredReposState = user.starredRepos
-				nextState = {
-					...state,
-					entities: {
-						...state.entities,
-						[userName]: {
-							...user,
-							starredRepos: starredReposReducer(starredReposState, action),
-						},
+			if (action.isError) return state
+			const { payload: newUserData } = action
+			const userData = state.entities[newUserData.login] || {}
+			return {
+				...state,
+				entities: {
+					...state.entities,
+					[newUserData.login]: {
+						...userData,
+						...newUserData,
 					},
 				}
 			}
-			break
 		}
-		default: {
-			return state
+		case LOAD_STARRED_REPOS_RESOLVE: {
+			if (action.isError) return state
+			const { userName } = action.payload
+			const user = state.entities[userName] || {}
+			const starredReposState = user.starredRepos
+			return {
+				...state,
+				entities: {
+					...state.entities,
+					[userName]: {
+						...user,
+						starredRepos: starredReposReducer(starredReposState, action),
+					},
+				},
+			}
 		}
-	}
-	return {
-		...nextState,
-		pagination: paginationReducer(state.pagination, action),
+		default: return state
 	}
 }

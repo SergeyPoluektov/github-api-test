@@ -14,7 +14,7 @@ function* searchUserWatcher ({ payload }) {
 		const parsed = parseLinkHeader(linkHeader)
 		const hasLast = parsed && parsed.last
 		const pagesCount = parseInt(hasLast ? parsed.last.page : page, 10)
-		yield put(searchUserResolve({ entities: users, pagesCount, page }))
+		yield put(searchUserResolve({ entities: users, pagesCount, page, term }))
 	}
 	catch (e) {
 		console.log('Cannt find users', e)

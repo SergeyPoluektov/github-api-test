@@ -12,12 +12,16 @@ import {
 	loadRepoInfo,
 } from 'store/state/domainData/actions'
 import { getUsers, getRepos, getPages } from 'store/state/domainData/selectors'
+import { createSelector } from 'reselect'
 
+
+const usersPagesSelector = createSelector(
+)
 
 function* usersPageWorker ({ q: term, page = '1' }) {
-	const pages = yield select(getPages)
+	const pages = (yield select(getPages, term)) || {}
 	const users = pages[page] || []
-	if (users.length > 0) yield put(searchUserResolve({ page }))
+	if (users.length > 0) yield put(searchUserResolve({ term, page }))
 	else yield put(searchUser(term, page))
 }
 

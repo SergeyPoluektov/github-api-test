@@ -4,6 +4,7 @@ export {
 	getPagesCount,
 	getCurrentPage,
 	getPages,
+	byCurrentTerm,
 } from './user'
 export {
 	getRepos,
