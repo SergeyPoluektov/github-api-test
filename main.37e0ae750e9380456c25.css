@@ -1,0 +1,290 @@
+.src-components-UserSearch-styles-index__searchContainer--2ZesL {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: center;
+	    justify-content: center;
+}
+
+.src-components-UserSearch-styles-index__title--1LgOr {
+	text-align: left;
+	margin: 0px 0px 8px 0px;
+	font-size: 18px;
+}
+
+.src-components-UserSearch-styles-index__searchBtn--2HZF8 {
+	font-size: 18px;
+	margin-left: 8px;
+}
+
+.src-components-UserSearch-styles-index__searchInput--_aLFM {
+	font-size: 18px;
+	padding: 8px;
+}
+
+.src-components-UserCard-styles-index__user--3Vnr- {
+	background: #fff;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	height: 100%;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
+}
+
+.src-components-UserCard-styles-index__imageContainer--fDKd6 {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	overflow: hidden;
+}
+
+.src-components-UserCard-styles-index__image--3RgBI {
+	width: 100%;
+}
+
+.src-components-UserCard-styles-index__titleContainer--AcZZr {
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+	-ms-flex-preferred-size: 20%;
+	    flex-basis: 20%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
+}
+
+.src-components-UserCard-styles-index__title--2Egng {
+	padding: 10px;
+}
+
+.src-components-Paginator-styles-index__paginator--1S330 {
+	width: 100%;
+}
+
+.src-components-Paginator-styles-index__pages--3jHk3 {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	padding: 8px 0px;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+.src-components-Paginator-styles-index__pageNum--2CVYp {
+	padding: 4px;
+	margin-right: 4px;
+	margin-top: 4px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.src-components-Paginator-styles-index__pageNum--2CVYp:last-child {
+	margin-right: 0px;
+}
+.src-components-Paginator-styles-index__pageNumActive--1YQ4s {
+	color: #6d6d6d;
+	text-decoration: none;
+	border: none;
+	background: #efefef;
+}
+
+.src-components-UserList-styles-index__userCardWrapper--1yCG7 {
+	width: 132px;
+	height: 173px;
+	margin: 10px;
+}
+
+.src-components-UserList-styles-index__userList--Kxnjk {
+	width: 100%;
+	height: 100%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	background: #c3c3c3;
+}
+
+
+.src-components-UserDetails-styles-index__userInfo--2Km6r {
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.src-components-UserDetails-styles-index__user--2wsL2 {
+	-ms-flex-preferred-size: 20%;
+	    flex-basis: 20%;
+	background: #fff;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	height: 100%;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
+	-ms-flex-align: center;
+	    align-items: center;
+}
+
+.src-components-UserDetails-styles-index__imageContainer--3rmMf {
+	max-width: 200px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	overflow: hidden;
+}
+
+.src-components-UserDetails-styles-index__image--1jp96 {
+	width: 100%;
+}
+
+.src-components-UserDetails-styles-index__infoContainer--b5IsM {
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+	-ms-flex-preferred-size: 20%;
+	    flex-basis: 20%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	padding: 10px;
+}
+
+.src-components-UserDetails-styles-index__name--1Ktxp {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.src-components-UserDetails-styles-index__noReposTxt--3MRvn {
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+.src-components-UserDetails-styles-index__sort--12Vb5 {
+	padding-left: 20px;
+}
+
+.src-components-UserDetails-styles-index__sortTitle--_T9yJ {
+	text-transform: uppercase;
+}
+
+.src-components-UserDetails-styles-index__sortLinkList--wKr-S {
+	max-width: 310px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+.src-components-UserDetails-styles-index__sortLink--11aWN {
+	margin-right: 8px;
+	margin-top: 8px;
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.src-components-UserDetails-styles-index__sortLink--11aWN:last-child {
+	margin-right: 0px;
+}
+.src-components-UserDetails-styles-index__activeSortLink--1466l {
+	color: #6d6d6d;
+	text-decoration: none;
+	border: none;
+	background: #efefef;
+}
+
+.src-components-RepoDetails-styles-index__repoDetails--3m1rW {
+	width: 100%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+}
+
+.src-components-RepoDetails-styles-index__ownerInfo--2w0py {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: start;
+	    justify-content: flex-start;
+	-ms-flex-align: center;
+	    align-items: center;
+	padding: 0px 8px;
+}
+
+.src-components-RepoDetails-styles-index__imageContainer--3yjua {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	overflow: hidden;
+	max-width: 34px;
+}
+
+.src-components-RepoDetails-styles-index__image--Z-bOv {
+	width: 100%;
+}
+
+.src-components-RepoDetails-styles-index__titleContainer--2MY5a {
+	font-size: 22px;
+}
+
+.src-components-RepoDetails-styles-index__title--q3Puz {
+	padding: 10px;
+}
+
+.src-components-RepoDetails-styles-index__repoName--2Pi1Y {
+	font-size: 35px;
+	padding: 8px;
+	margin: 10px 0px;
+}
+
+.src-components-RepoDetails-styles-index__descr--3c4Gl {
+	padding: 0px 8px;
+}
+
+.src-components-PageContainer-styles-index__page--1GL7x {
+	background: #fff;
+	height: 100vh;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+}
+
+.src-components-PageContainer-styles-index__body--SNd1G {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-align: stretch;
+	    align-items: stretch;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex: 1 0 auto;
+	    flex: 1 0 auto;
+}
+
+.src-components-PageContainer-styles-index__header--nJgj_ {
+	padding: 10px;
+	border-bottom: solid black 1px;
+	margin-bottom: 10px;
+}
+
+
+/*# sourceMappingURL=main.37e0ae750e9380456c25.css.map*/

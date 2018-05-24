@@ -4,10 +4,10 @@ const projectPaths = require('../path.js')
 
 
 const plugins = [
-	new CleanPlugin([ projectPaths.build ], {
-		allowExternal: true,
-		exclude: [ 'lib' ],
-	}),
+ /*  new CleanPlugin([ projectPaths.build ], { */
+		// allowExternal: true,
+		// exclude: [ 'lib' ],
+	/* }), */
 ]
 
 module.exports = (env = {}, args) => ({

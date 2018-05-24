@@ -2,10 +2,10 @@ import qs from 'qs'
 
 
 export const PATHS = Object.freeze({
-	INDEX: '/',
-	USERS: '/users',
-	USER_DETAILS: '/users/:userName',
-	REPO_DETAILS: '/repos/:orgName/:repoName',
+	INDEX: '/github-api-test/',
+	USERS: '/github-api-test/users',
+	USER_DETAILS: '/github-api-test/users/:userName',
+	REPO_DETAILS: '/github-api-test/repos/:orgName/:repoName',
 })
 
 export const getRepoDetailsHref = (fullRepoName) => {
